@@ -1,15 +1,12 @@
 import logo from './logo.svg';
+import NavBar from './components/NavBar';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h2>
-          HG Store.
-        </h2>
-      </header>
-    </div>
+    <>
+        <NavBar/>
+    </>
   );
 }
 

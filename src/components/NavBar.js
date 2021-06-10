@@ -10,18 +10,21 @@ export default class navBar extends Component {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Inicio</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Productos</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Contactos</a>
-                        </li>
-                    </ul>
+                        <ul className="navbar-nav">
+                            <li className="nav-item">
+                                <a className="nav-link active" aria-current="page" href="#">Inicio</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Productos</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Contactos</a>
+                            </li>
+                        </ul>  
                     </div>
+                   <div className="d-flex">
+                     <img className="img" src="img/cart.svg"/>
+                   </div>
                 </div>
             </nav>
         )

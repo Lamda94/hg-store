@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <ItemList />
+      <ItemList msj={"Welcome to HG Store"} />
     </>
   );
 }

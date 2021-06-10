@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import Item from './Item'
 
-export default function ItItemListem (){    
+export default function ItItemListem ({msj}){    
     return (
         <div className="container">
         <div className="row align-items-start">
             <div className="col">
-                 <Item nombre={'Producto 1'} descr={"Description del producto."}></Item>
+                <div className="position-absolute top-50 start-50 translate-middle">
+                    <h1>{msj}</h1>
+                </div>                
             </div>
         </div>                
     </div>   

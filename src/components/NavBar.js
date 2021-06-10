@@ -12,13 +12,13 @@ export default class navBar extends Component {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Inicio</a>
+                                <a className="nav-link active" aria-current="page" href="#">Home</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Productos</a>
+                                <a className="nav-link" href="#">Products</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Contactos</a>
+                                <a className="nav-link" href="#">Contacts</a>
                             </li>
                         </ul>  
                     </div>

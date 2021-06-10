@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react';
+import NavItem from './NavItem';
 
-export default class navBar extends Component {
-    render() {
+export default function navBar() {
+   
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
@@ -11,15 +12,9 @@ export default class navBar extends Component {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
-                            <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Products</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Contacts</a>
-                            </li>
+                            <NavItem name={"Home"} src={"#"} active={true}/>
+                            <NavItem name={"Products"} src={"#"} activo={false}/>
+                            <NavItem name={"Contacts"} src={"#"} activo={false}/>                            
                         </ul>  
                     </div>
                    <div className="d-flex">
@@ -28,5 +23,4 @@ export default class navBar extends Component {
                 </div>
             </nav>
         )
-    }
 }

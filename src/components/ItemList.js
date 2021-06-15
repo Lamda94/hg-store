@@ -2,14 +2,10 @@ import React from 'react'
 
 export default function ItItemListem ({msj}){    
     return (
-        <div className="container">
         <div className="row align-items-start">
-            <div className="col">
-                <div className="position-absolute top-50 start-50 translate-middle">
-                    <h1>{msj}</h1>
-                </div>                
+            <div className="col p-4">
+                <h1 className="text-center p-5">{msj}</h1>            
             </div>
-        </div>                
-    </div>   
+        </div>     
     )
 }

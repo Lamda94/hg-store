@@ -3,7 +3,7 @@ import Product from './Product'
 
 const productsList = () => {
     return (
-        <div className="row row-cols-1 row-cols-md-3 g-4">
+        <div className="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center">
             <Product name={"Product 1"} descr={"Product description 1."} src={"img/product.png"}></Product>
             <Product name={"Product 2"} descr={"Product description 2."} src={"img/product.png"}></Product>
             <Product name={"Product 3"} descr={"Product description 3."} src={"img/product.png"}></Product>

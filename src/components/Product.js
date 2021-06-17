@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 
-export default function Product({name, descr, src}) {
+export default function Product({name, descr, src, availability}) {
     const [number, setNumber] = useState(0);
+    const [ava, setAva] = useState(availability)
 
     const Add = ()=>{
-        return setNumber(number+1);
+        if (number < ava) {
+            return setNumber(number+1);
+        }        
     }
 
     const Diminish =()=>{
@@ -18,7 +21,7 @@ export default function Product({name, descr, src}) {
     }
 
     return (
-        <div className="col">
+        <div className="col" key={name}>
             <div className="card text-dark bg-light mb-3">
                 <img src={src} className="card-img-top card-header" alt="..."/>
                 <div className="card-body">

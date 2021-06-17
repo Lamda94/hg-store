@@ -1,17 +1,27 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios'
 import Product from './Product'
 
-const productsList = () => {
-    return (
-        <div className="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center">
-            <Product name={"Product 1"} descr={"Product description 1."} src={"img/product.png"}></Product>
-            <Product name={"Product 2"} descr={"Product description 2."} src={"img/product.png"}></Product>
-            <Product name={"Product 3"} descr={"Product description 3."} src={"img/product.png"}></Product>
-            <Product name={"Product 4"} descr={"Product description 4."} src={"img/product.png"}></Product>
-            <Product name={"Product 5"} descr={"Product description 5."} src={"img/product.png"}></Product>
-            <Product name={"Product 6"} descr={"Product description 6."} src={"img/product.png"}></Product>
+export default () => {
+    const [products, setProducts] = useState([]);
+    console.log(products); 
+    useEffect(() => {           
+        setTimeout(() => {
+            axios('/data/data.json')
+            .then((res) => {
+                setProducts(res.data);
+            })
+            .catch(console.log);
+        }, 2000);
+    }, []);
+        
+    return ( 
+        <div className="row row-cols-1 row-cols-md-3 g-4" key="0">
+            {    
+                products.map(product=>{
+                    return <Product name={product.name} descr={product.description} src={product.images} availability={product.availability}></Product>
+                })
+            }
         </div>
-    );
+    )           
 }
-
-export default productsList;

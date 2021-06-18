@@ -21,7 +21,7 @@ export default function Product({name, descr, src, availability}) {
     }
 
     return (
-        <div className="col">
+        <div className="col d-flex justify-content-center">
             <div className="card text-dark bg-light mb-3">
                 <img src={src} className="card-img-top card-header" alt="..."/>
                 <div className="card-body">

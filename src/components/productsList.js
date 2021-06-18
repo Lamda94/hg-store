@@ -19,9 +19,7 @@ export default () => {
     return ( 
         <div className="row row-cols-1 row-cols-md-3 g-4" >
             {    
-                products.map(product=>{
-                    return <Product idkey={product.id} name={product.name} descr={product.description} src={product.images} availability={product.availability}></Product>
-                })
+                products.map((product)=><Product key={product.id} name={product.name} descr={product.description} src={product.images} availability={product.availability}></Product>)
             }
         </div>
     )           

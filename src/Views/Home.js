@@ -1,11 +1,12 @@
-import ItemList from "../components/ItemList";
+import Banner from "../components/Banner";
 import CategoriesList from '../components/categoriesList'
 
 export default function Home() {
     return (
         <>
-            <ItemList msj={"Welcome to HG pet store"} />  
-            <div className="d-flex justify-content-center">
+            <Banner msj={"Welcome to HG pet store"} />  
+            <h2 className="text-center mt-4 fw-bold">Categories</h2>
+            <div className="d-flex justify-content-center">                
                 <CategoriesList/>
             </div>
             <div className="row bg-secondary mt-5 mb-5 text-light p-4">

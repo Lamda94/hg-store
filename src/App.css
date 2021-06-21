@@ -8,3 +8,20 @@
 .card{
   width: 18rem;
 }
+
+ul li{
+  list-style: none;
+  padding: 7px;
+}
+
+.categories {
+  background: #F0F1F2;
+}
+
+.search{
+  width: 30%;
+  height: 50px;
+}
+.a{
+  text-decoration: none;
+}

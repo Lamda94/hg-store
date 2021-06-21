@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "name":"Fishes",
+        "description":"Freshwater fish",
+        "img":"/img/peces.jpg"
+    },
+    {
+        "id":2,
+        "name":"Fishbowls",
+        "description":"Fish tanks for freshwater fish",
+        "img":"/img/peceras.jpg"
+    },
+    {
+        "id":3,
+        "name":"Accessories",
+        "description":"Fish Tank Accessories",
+        "img":"/img/accesorios.jpg"
+    },
+    {
+        "id":1,
+        "name":"Food",
+        "description":"Freshwater fish food",
+        "img":"/img/alimento.jpg"
+    }
+]

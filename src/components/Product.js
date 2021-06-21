@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-
-export default function Product({name, descr, src, availability}) {
+import Modal from './Modal'
+export default function Product({data}) {
     const [number, setNumber] = useState(0);
-    const [ava, setAva] = useState(availability)
+    const [ava, setAva] = useState(data.availability)
 
     const Add = ()=>{
         if (number < ava) {
@@ -23,10 +23,10 @@ export default function Product({name, descr, src, availability}) {
     return (
         <div className="col d-flex justify-content-center">
             <div className="card text-dark bg-light mb-3">
-                <img src={src} className="card-img-top card-header" alt="..."/>
+                <img src={data.img} className="card-img-top card-header" alt="..."/>
                 <div className="card-body">
-                    <h5 className="card-title">{name}</h5>
-                    <p className="card-text">{descr}</p>
+                    <h5 className="card-title">{data.name}</h5>
+                    <p className="card-text">{data.description}</p>
                 </div>
                 <div className="card-footer d-flex justify-content-center">
                     <div className="btn-group" role="group" aria-label="Basic example">
@@ -34,6 +34,9 @@ export default function Product({name, descr, src, availability}) {
                         <label className="btn btn-outline-primary" htmlFor="btnradio2">{number}</label>
                         <button type="button" className="btn btn-primary" onClick={Diminish}>-</button>
                     </div>
+                    <br/>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target={`Modal${data.id}`}>Details</button>
+                    <Modal data={data}/>
                 </div>
             </div>
         </div>

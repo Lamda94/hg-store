@@ -24,7 +24,7 @@ export default function Detail({data}) {
             <div className="card mb-3 pt-5 mt-5 ms-2" style={{"width": "80%"}}>
                 <div className="row g-0">
                     <div className="col-md-4">
-                        <img src={data.images} alt="Imagen del producto."/>
+                        <img src={data.images} alt="Imagen del producto." width="80%" className="ms-4"/>
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">

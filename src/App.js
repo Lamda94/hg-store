@@ -5,6 +5,8 @@ import Home from './Views/Home';
 import About from './Views/About';
 import Contact from './Views/Contact';
 import Store from './Views/Store';
+import FilterProduct from './Views/FilterProduct'
+import ProductDetails from './Views/ProductDetails'
 function App() {
   return (
     <div className="container-fluid">     
@@ -12,8 +14,9 @@ function App() {
         <NavBar />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/Store" exact component={Store} />
-          <Route path="/category/:id" exact component={Store} />
+          <Route path="/Store" component={Store} />
+          <Route path="/category/:id" component={FilterProduct} />
+          <Route path="/detail/:id" component={ProductDetails} />
         </Switch>
       </Router>
     </div>

@@ -4,6 +4,7 @@
         "name": "Product 1",
         "description": "Product description 1.",
         "images": "img/product.png",
+        "time": 3,
         "price": 20,
         "availability": 0
     },
@@ -12,6 +13,7 @@
         "name": "Product 2",
         "description": "Product description 2.",
         "images": "img/product.png",
+        "time": 1,
         "availability": 6,
         "price": 30,
         "category":1
@@ -21,6 +23,7 @@
         "name": "Product 3",
         "description": "Product description 3.",
         "images": "img/product.png",
+        "time": 4,
         "availability": 9,
         "price": 60,
         "category":3
@@ -30,8 +33,19 @@
         "name": "Product 4",
         "description": "Product description 4.",
         "images": "img/product.png",
+        "time": 1,
         "availability": 0,
         "price": 10,
         "category":2
+    },
+    {
+        "id":5,
+        "name": "Product 5",
+        "description": "Product description 5.",
+        "images": "img/product.png",
+        "time": 1,
+        "availability": 6,
+        "price": 30,
+        "category":1
     }
 ]

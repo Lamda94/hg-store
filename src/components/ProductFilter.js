@@ -5,9 +5,7 @@ import {useParams} from 'react-router-dom'
 
 export default function FilterProduct(){
     const {id} = useParams();  
-    console.log("id:"+id);
     const [products, setProducts] = useState([]);
-    console.log(products);
     useEffect(() => {             
         setTimeout(() => {
             axios.get('/data/data.json')

@@ -1,17 +1,27 @@
-import React from 'react'
-import Products from '../components/ProductFilter';
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
+import Products from '../components/ProductFilter'
 import {Link} from 'react-router-dom'
 
 export default function Filter() {
+    const [category, setCategory] = useState([]);
+    useEffect(() => {
+        axios.get("/data/category.json").then((res)=>{
+            setCategory(res.data);
+        });
+    }, [])
     return (
         <div className="d-flex justify-content-center categories">
             <div className="col-2 pt-5 mt-5 border-start bg-light">
                 <ul>
                     <li><h2>Categories</h2></li>
-                    <li>Fishes</li>
-                    <li>Food</li>
-                    <li>Fishbowls</li>
-                    <li>Accessories</li>
+                    {
+                        category.map(data=>{
+                            return <Link key={data.id} className="text-secondary a" to={`/category/${data.id}`}><li>{data.name}</li></Link>;
+                        })
+                    }
+                    
+                    
                 </ul>
             </div>
             <div className="col-7 border-start border-end bg-light">  

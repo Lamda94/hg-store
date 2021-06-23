@@ -6,7 +6,8 @@
         "images": "https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/product.png?alt=media&token=5ef8328d-6062-4d30-956b-9a780e83c0a8",
         "time": 3,
         "price": 20,
-        "availability": 0
+        "availability": 0,
+        "category":4
     },
     {
         "id":2,

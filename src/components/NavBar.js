@@ -1,9 +1,8 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import NavItem from './NavItem';
 import {Link} from 'react-router-dom';
 
-export default function navBar() {
-   
+export default () => {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom">
                 <div className="container-fluid">
@@ -20,6 +19,7 @@ export default function navBar() {
                         </ul>  
                     </div>
                    <div className="d-flex">
+                      <span></span>
                      <img className="img" src='https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart.svg?alt=media&token=d60920bb-bd11-4b2c-baed-ecba78b66dac'/>
                    </div>
                 </div>

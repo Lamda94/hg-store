@@ -1,16 +1,17 @@
-import NavBar from "./components/NavBar";
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import './App.css';
 import Home from './Views/Home';
-import About from './Views/About';
-import Contact from './Views/Contact';
+/* import About from './Views/About';
+import Contact from './Views/Contact'; */
 import Store from './Views/Store';
-import FilterProduct from './Views/FilterProduct'
-import ProductDetails from './Views/ProductDetails'
+import FilterProduct from './Views/FilterProduct';
+import ProductDetails from './Views/ProductDetails';
+
 function App() {
   return (
-    <div className="container-fluid">     
-      <Router> 
+    <div className="container-fluid">
+      <Router>
         <NavBar />
         <Switch>
           <Route path="/" exact component={Home} />

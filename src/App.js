@@ -7,20 +7,23 @@ import Contact from './Views/Contact'; */
 import Store from './Views/Store';
 import FilterProduct from './Views/FilterProduct';
 import ProductDetails from './Views/ProductDetails';
+import { CartProvider } from './context/CartContext';
 
 function App() {
   return (
-    <div className="container-fluid">
-      <Router>
-        <NavBar />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/Store" component={Store} />
-          <Route path="/category/:id" component={FilterProduct} />
-          <Route path="/detail/:id" component={ProductDetails} />
-        </Switch>
-      </Router>
-    </div>
+    <CartProvider>
+      <div className="container-fluid">
+        <Router>
+          <NavBar />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/Store" component={Store} />
+            <Route path="/category/:id" component={FilterProduct} />
+            <Route path="/detail/:id" component={ProductDetails} />
+          </Switch>
+        </Router>
+      </div>
+    </CartProvider>
   );
 }
 

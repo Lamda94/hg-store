@@ -7,8 +7,6 @@ export default function Detail({ data }) {
   const [ava] = useState(data.availability);
   const [cart, setCart] = useContext(CartContext);
 
-  console.log(cart);
-
   const Add = () => {
     if (number < ava) {
       return setNumber(number + 1);

@@ -1,17 +1,14 @@
 import React, { useEffect, useState, useContext } from 'react';
 import Products from '../components/productsList';
 import { Link } from 'react-router-dom';
-import Spinner from '../components/spinner';
 import axios from 'axios';
 
 export default function Store() {
   const [category, setCategory] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios.get('/data/category.json').then((res) => {
       setCategory(res.data);
-      setLoading(false);
     });
   }, []);
   return (
@@ -21,17 +18,13 @@ export default function Store() {
           <li>
             <h2>Categories</h2>
           </li>
-          {loading ? (
-            <Spinner />
-          ) : (
-            category.map((data) => {
-              return (
-                <Link className="text-secondary a" to={`/category/${data.id}`}>
-                  <li>{data.name}</li>
-                </Link>
-              );
-            })
-          )}
+          {category.map((data) => {
+            return (
+              <Link className="text-secondary a" to={`/category/${data.id}`}>
+                <li>{data.name}</li>
+              </Link>
+            );
+          })}
         </ul>
       </div>
       <div className="col-7 border-start border-end bg-light">

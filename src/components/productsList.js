@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Product from './Product';
+import Spinner from '../components/spinner';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     setTimeout(() => {
       axios
@@ -12,16 +15,21 @@ export default () => {
         .then((res) => {
           setProducts(res.data);
         })
-        .catch(console.log);
+        .catch(console.log)
+        .finally(() => {
+          setLoading(false);
+        });
     }, 2000);
   }, []);
 
   return (
     <div>
       <div className="row row-cols-1 row-cols-md-3 g-4 p-3">
-        {products.map((product) => (
-          <Product key={product.id} data={product} />
-        ))}
+        {loading ? (
+          <Spinner />
+        ) : (
+          products.map((product) => <Product key={product.id} data={product} />)
+        )}
       </div>
     </div>
   );

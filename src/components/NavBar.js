@@ -1,10 +1,18 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import NavItem from './NavItem';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 
 export default function () {
   const [cart, setCart] = useContext(CartContext);
+  const [amount, setAmount] = useState(0);
+  useEffect(() => {
+    let n = 0;
+    cart.forEach((c) => {
+      n += c.amount;
+    });
+    setAmount(n);
+  }, [cart]);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom">
@@ -31,18 +39,20 @@ export default function () {
             <NavItem name={'Contact'} src={'/Contact'} activo={false} />
           </ul>
         </div>
-        <div className="d-flex">
-          <span
-            className="count me-2 rounded-pill text-light pt-2 ps-3 pe-3"
-            style={{ background: 'red' }}
-          >
-          {cart.length}
-          </span>
-          <img
-            className="img"
-            src="https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart.svg?alt=media&token=d60920bb-bd11-4b2c-baed-ecba78b66dac"
-          />
-        </div>
+        <Link to="/cart" className="a">
+          <div className="d-flex">
+            <span
+              className="count me-1 rounded-pill text-light pt-2 ps-3 pe-3"
+              style={{ background: 'red' }}
+            >
+              {amount}
+            </span>
+            <img
+              className="img"
+              src="https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart.svg?alt=media&token=d60920bb-bd11-4b2c-baed-ecba78b66dac"
+            />
+          </div>
+        </Link>
       </div>
     </nav>
   );

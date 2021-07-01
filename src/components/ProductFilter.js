@@ -13,7 +13,7 @@ export default function FilterProduct() {
       axios
         .get('/data/data.json')
         .then((res) => {
-          const data = res.data.filter((product) => product.category == id);
+          const data = res.data.filter((product) => product.category === id);
           setProducts(data);
         })
         .catch(console.log)

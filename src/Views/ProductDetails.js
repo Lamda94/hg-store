@@ -11,7 +11,7 @@ export default function ProductDetails() {
       axios
         .get('/data/data.json')
         .then((res) => {
-          const data = res.data.filter((Produc) => Produc.id == id);
+          const data = res.data.filter((Produc) => Produc.id === id);
           setProduct(data);
         })
         .catch(console.log);

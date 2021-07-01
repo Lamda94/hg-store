@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 import Detail from '../components/DetailCart';
 
@@ -21,7 +19,7 @@ export default () => {
         className="categories col-9 ps-5 border-start border-end"
         style={{ height: '100vh' }}
       >
-        {cart.length == 0 ? (
+        {cart.length === 0 ? (
           <h3 className="text-center mt-5">¡Cart empty!</h3>
         ) : (
           <>

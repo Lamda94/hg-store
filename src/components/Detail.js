@@ -9,7 +9,9 @@ export default function Detail({ data }) {
 
   const Add = () => {
     if (number < ava) {
-      return setNumber(number + 1);
+      if (data.availability > 0) {
+        return setNumber(number + 1);
+      }
     }
   };
 
@@ -24,14 +26,27 @@ export default function Detail({ data }) {
   };
 
   const addCart = () => {
-    if (cart.length > 0) {
-      const n = cart.find((d) => d.id == data.id);
-      if (n === undefined || n.length == 0) {
-        setCart([...cart, { ...data, amount: number }]);
+    if (number > 0) {
+      if (cart.length > 0) {
+        const n = cart.find((d) => d.id === data.id);
+        if (n === undefined || n.length === 0) {
+          setCart([...cart, { ...data, amount: number }]);
+        } else {
+          const d = cart.map((c) => {
+            if (c.id === data.id && c.amount + number <= c.availability) {
+              c.amount += number;
+            } else {
+              data.availability = 0;
+              setNumber(0);
+            }
+            return c;
+          });
+          setCart(d);
+        }
+      } else {
+        data.amount = number;
+        setCart([data]);
       }
-    } else {
-      data.amount = number;
-      setCart([data]);
     }
   };
 

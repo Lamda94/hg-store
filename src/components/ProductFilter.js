@@ -8,12 +8,13 @@ export default function FilterProduct() {
   const { id } = useParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  console.log(products);
   useEffect(() => {
     setTimeout(() => {
       axios
         .get('/data/data.json')
         .then((res) => {
-          const data = res.data.filter((product) => product.category === id);
+          const data = res.data.filter((product) => product.category == id);
           setProducts(data);
         })
         .catch(console.log)

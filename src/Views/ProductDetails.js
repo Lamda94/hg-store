@@ -6,12 +6,14 @@ import Detail from '../components/Detail';
 export default function ProductDetails() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
+  console.log(id);
   useEffect(() => {
     setTimeout(() => {
       axios
         .get('/data/data.json')
         .then((res) => {
-          const data = res.data.filter((Produc) => Produc.id === id);
+          console.log(res.data);
+          const data = res.data.filter((Produc) => Produc.id == id);
           setProduct(data);
         })
         .catch(console.log);

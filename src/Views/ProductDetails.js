@@ -1,30 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { db } from '../firebase';
 import { useParams } from 'react-router-dom';
 import Detail from '../components/Detail';
 
 export default function ProductDetails() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
-  console.log(id);
-  useEffect(() => {
-    setTimeout(() => {
-      axios
-        .get('/data/data.json')
-        .then((res) => {
-          console.log(res.data);
-          const data = res.data.filter((Produc) => Produc.id == id);
-          setProduct(data);
-        })
-        .catch(console.log);
-    }, 2000);
+  console.log(product);
+  useEffect(async () => {
+    try {
+      let data;
+      const querySnapshot = await db.collection('Products').get();
+      querySnapshot.forEach((doc) => {
+        if (doc.id == id) {
+          setProduct({ ...doc.data(), id: id });
+        }
+      });
+    } catch (err) {
+      console.log(err);
+    }
   }, [id]);
 
   return (
     <div className="row d-flex justify-content-center p-5">
-      {product.map((pro) => (
-        <Detail key={pro.id} data={pro} />
-      ))}
+      <Detail key={product.id} data={product} />
     </div>
   );
 }

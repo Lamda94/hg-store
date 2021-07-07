@@ -7,27 +7,27 @@
         "time": 3,
         "price": 20,
         "availability": 0,
-        "category":4
+        "category": 4
     },
     {
-        "id":2,
+        "id": 2,
         "name": "Product 2",
         "description": "Product description 2.",
         "images": "https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/product.png?alt=media&token=5ef8328d-6062-4d30-956b-9a780e83c0a8",
         "time": 1,
         "availability": 6,
         "price": 30,
-        "category":1
+        "category": 1
     },
     {
-        "id":3,
+        "id": 3,
         "name": "Product 3",
         "description": "Product description 3.",
         "images": "https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/product.png?alt=media&token=5ef8328d-6062-4d30-956b-9a780e83c0a8",
         "time": 4,
         "availability": 9,
         "price": 60,
-        "category":3
+        "category": 3
     },
     {
         "id": 4,
@@ -37,16 +37,16 @@
         "time": 1,
         "availability": 0,
         "price": 10,
-        "category":2
+        "category": 2
     },
     {
-        "id":5,
+        "id": 5,
         "name": "Product 5",
         "description": "Product description 5.",
         "images": "https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/product.png?alt=media&token=5ef8328d-6062-4d30-956b-9a780e83c0a8",
         "time": 1,
         "availability": 6,
         "price": 30,
-        "category":1
+        "category": 1
     }
 ]

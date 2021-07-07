@@ -1,15 +1,24 @@
 import React, { useEffect, useState, useContext } from 'react';
 import Products from '../components/productsList';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { db } from '../firebase';
 
 export default function Store() {
   const [category, setCategory] = useState([]);
 
-  useEffect(() => {
-    axios.get('/data/category.json').then((res) => {
-      setCategory(res.data);
-    });
+  useEffect(async () => {
+    try {
+      let data = [];
+      const querySnapshot = await db.collection('Category').get();
+      querySnapshot.forEach((doc) => {
+        let d = doc.data();
+        d.id = doc.id;
+        data.push(d);
+      });
+      setCategory(data);
+    } catch (err) {
+      console.log(err);
+    }
   }, []);
   return (
     <div className="d-flex justify-content-center categories">
@@ -50,7 +59,7 @@ export default function Store() {
             </button>
           </div>
         </div>
-        <Products filtro={'Products'} />
+        <Products />
       </div>
     </div>
   );

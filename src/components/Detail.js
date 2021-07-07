@@ -6,7 +6,7 @@ export default function Detail({ data }) {
   const [number, setNumber] = useState(0);
   const [ava] = useState(data.availability);
   const [cart, setCart] = useContext(CartContext);
-
+  console.log(data);
   const Add = () => {
     if (number < ava) {
       if (data.availability > 0) {
@@ -26,10 +26,18 @@ export default function Detail({ data }) {
   };
 
   const addCart = () => {
+    console.log(cart);
     if (number > 0) {
+      console.log(cart.length + '>' + 0);
       if (cart.length > 0) {
-        const n = cart.find((d) => d.id === data.id);
-        if (n === undefined || n.length === 0) {
+        console.log(cart.length + '>' + 0);
+        const n = cart.find((d) => {
+          console.log(d.id + '===' + data.id);
+          if (d.id === data.id) {
+            return d;
+          }
+        });
+        if (n == undefined || n.length == 0) {
           setCart([...cart, { ...data, amount: number }]);
         } else {
           const d = cart.map((c) => {

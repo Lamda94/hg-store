@@ -9,6 +9,7 @@ import Store from './Views/Store';
 import FilterProduct from './Views/FilterProduct';
 import ProductDetails from './Views/ProductDetails';
 import { CartProvider } from './context/CartContext';
+//import './seeds/index';
 
 function App() {
   return (

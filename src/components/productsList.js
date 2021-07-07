@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import Product from './Product';
 import Spinner from '../components/spinner';
+import { db } from '../firebase';
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    setTimeout(() => {
-      axios
-        .get('/data/data.json')
-        .then((res) => {
-          setProducts(res.data);
-        })
-        .catch(console.log)
-        .finally(() => {
-          setLoading(false);
-        });
-    }, 2000);
+  useEffect(async () => {
+    try {
+      let data = [];
+      const querySnapshot = await db.collection('Products').get();
+      querySnapshot.forEach((doc) => {
+        let d = doc.data();
+        d.id = doc.id;
+        data.push(d);
+      });
+      setProducts(data);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
   return (

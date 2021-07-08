@@ -71,8 +71,8 @@ export default function Detail({ data }) {
               <img
                 src={data.images}
                 alt="Imagen del producto."
-                width="80%"
-                className="ms-4 mt-4"
+                width="95%"
+                className="rounded mt-4"
               />
             </div>
             <div className="col-md-8 border-start">

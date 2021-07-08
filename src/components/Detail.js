@@ -80,11 +80,11 @@ export default function Detail({ data }) {
                 <h5 className="card-title">{data.name}</h5>
                 <p className="card-text">{data.description}</p>
                 <ul className="border-top mt-3 row pt-3">
-                  <li>Price:{` ${data.price} USD`}</li>
-                  <li>Delivery time: {`${data.time} Dias`} </li>
+                  <li>Precio:{` ${data.price} USD`}</li>
+                  <li>Tiempo de entrega: {`${data.time} Dias`} </li>
                   <li>
-                    Availability:{' '}
-                    {data.availability === 0 ? 'Anavailable' : 'Available'}
+                    Disponibilidad:{' '}
+                    {data.availability === 0 ? 'Agotado' : 'Disponible'}
                   </li>
                 </ul>
                 <div
@@ -120,7 +120,7 @@ export default function Detail({ data }) {
                   } ms-2`}
                   onClick={addCart}
                 >
-                  Add to cart
+                  Añadir al Carrito
                 </button>
               </div>
             </div>

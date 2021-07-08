@@ -25,7 +25,7 @@ export default function Store() {
       <div className="col-2 pt-5 mt-5 border-start bg-light">
         <ul>
           <li>
-            <h2>Categories</h2>
+            <h2>Categorias</h2>
           </li>
           {category.map((data) => {
             return (
@@ -40,22 +40,22 @@ export default function Store() {
         <div className="d-flex justify-content-end">
           <p className="pt-5 mt-5">
             <Link className="text-secondary" to="/">
-              Home
+              Inicio
             </Link>{' '}
-            / <span className="text-muted">Store</span>
+            / <span className="text-muted">Productos</span>
           </p>
           <div className="input-group search me-4 ms-3 mt-5 pt-5">
             <input
               type="text"
               className="form-control"
-              placeholder="Search product"
+              placeholder="Buscar producto"
             />
             <button
               className="btn btn-outline-secondary"
               type="button"
               id="button-addon2"
             >
-              Search
+              Buscar
             </button>
           </div>
         </div>

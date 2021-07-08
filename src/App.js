@@ -14,7 +14,7 @@ import { CartProvider } from './context/CartContext';
 function App() {
   return (
     <CartProvider>
-      <div className="container-fluid">
+      <div className="container-fluid" style={{ padding: 0 }}>
         <Router>
           <NavBar />
           <Switch>

@@ -8,7 +8,7 @@ export default function spinner() {
         style={{ width: '3rem', height: '3rem' }}
         role="status"
       >
-        <span className="visually-hidden">Loading...</span>
+        <span className="visually-hidden">Cargando...</span>
       </div>
     </div>
   );

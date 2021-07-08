@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-export default function ItItemListem ({msj}){    
-    return (
-        <div className="row shadow-lg align-items-start bg-dark bg-gradient p-5">
-            <div className="col p-5">
-                <h1 className="text-center p-5 text-light">{msj}</h1>            
-            </div>
-        </div>     
-    )
+export default function ItItemListem({ msj }) {
+  return (
+    <div className="row shadow-lg align-items-start pt-5 banner">
+      <div className="col p-5 d-flex align-items-center justify-content-center">
+        <h1 className="p-5 text-light" style={{ marginTop: '15%' }}>
+          {msj}
+        </h1>
+      </div>
+    </div>
+  );
 }

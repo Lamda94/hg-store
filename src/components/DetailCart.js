@@ -23,13 +23,13 @@ export default function Detail({ data }) {
               <p className="card-text">{data.description}</p>
               <ul className="border-top mt-3 row pt-3">
                 <li>Total:{` ${data.price * data.amount} USD`}</li>
-                <li>Delivery time: {`${data.time} Dias`} </li>
-                <li>Amount: {data.amount}</li>
+                <li>Tiempo de etrega: {`${data.time} Dias`} </li>
+                <li>Cantidad: {data.amount}</li>
               </ul>
             </div>
             <div class="card-footer">
               <button type="button" className="btn btn-danger">
-                Remove
+                Quitar
               </button>
             </div>
           </div>

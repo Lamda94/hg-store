@@ -1,31 +1,48 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
-.img{
+body {
+  overflow-x: hidden;
+}
+.img {
   width: 40px;
   height: auto;
   margin-right: 15px;
   cursor: pointer;
+  color: seashell;
 }
 
-.card{
+.card {
   width: 18rem;
 }
 
-ul li{
+ul li {
   list-style: none;
   padding: 7px;
 }
 
 .categories {
-  background: #F0F1F2;
+  background: #f0f1f2;
 }
 
-.search{
+.search {
   width: 30%;
   height: 50px;
 }
-.a{
+
+.a {
   text-decoration: none;
+}
+
+.banner {
+  background: rgba(30, 30, 30, 0.8);
+  height: 100vh;
+}
+.head {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/banner.jpg?alt=media&token=ac171a6d-8e8b-4e3f-ad48-4cfcbf969198');
+  background-attachment: fixed;
+  background-size: cover;
 }

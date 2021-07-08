@@ -15,7 +15,7 @@ export default function () {
   }, [cart]);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top ">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           HG Store
@@ -33,10 +33,10 @@ export default function () {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            <NavItem name={'Home'} src={'/'} active={true} />
-            <NavItem name={'Store'} src={'/Store'} activo={false} />
-            <NavItem name={'About'} src={'/About'} activo={false} />
-            <NavItem name={'Contact'} src={'/Contact'} activo={false} />
+            <NavItem name={'Inicio'} src={'/'} active={true} />
+            <NavItem name={'Productos'} src={'/Store'} activo={false} />
+            <NavItem name={'Nosotros'} src={'/About'} activo={false} />
+            <NavItem name={'Contacto'} src={'/Contact'} activo={false} />
           </ul>
         </div>
         <Link to="/cart" className="a">
@@ -49,7 +49,7 @@ export default function () {
             </span>
             <img
               className="img"
-              src="https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart.svg?alt=media&token=d60920bb-bd11-4b2c-baed-ecba78b66dac"
+              src="https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart-ligth.svg?alt=media&token=496e3d29-fad8-40d2-93ae-b45a267178f9"
             />
           </div>
         </Link>

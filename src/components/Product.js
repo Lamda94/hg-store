@@ -19,7 +19,7 @@ export default function Product({ data }) {
           <div className="row">
             <Link to={`/detail/${data.id}`}>
               <button type="button" className="btn btn-primary">
-                Details
+                Detalles
               </button>
             </Link>
           </div>

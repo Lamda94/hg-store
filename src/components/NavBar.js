@@ -5,11 +5,13 @@ import { CartContext } from '../context/CartContext';
 
 export default function () {
   const location = useLocation();
-  console.log(location.pathname);
   const page = location.pathname;
   const [cart, setCart] = useContext(CartContext);
+  const [css, setCss] = useState({
+    style: 'navbar navbar-expand-lg fixed-top bg-transparent navbar-dark',
+    img: 'https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart-ligth.svg?alt=media&token=496e3d29-fad8-40d2-93ae-b45a267178f9',
+  });
   const [amount, setAmount] = useState(0);
-  const [scroll, setScroll] = useState(false);
   useEffect(() => {
     let n = 0;
     cart.forEach((c) => {
@@ -17,20 +19,29 @@ export default function () {
     });
     setAmount(n);
   }, [cart]);
-  const changeNavbar = e=>{
-    if(window.scrollY >= 80){
-      setScroll(true);
-    }else{
-      setScroll(false);
+  const changeNavbar = (e) => {
+    console.log(`${window.scrollY} >= 80 && ${page} == '/'`);
+    if (window.scrollY >= 80) {
+      setCss({
+        style: 'navbar navbar-expand-lg fixed-top bg-light navbar-light',
+        img: 'https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart.svg?alt=media&token=d60920bb-bd11-4b2c-baed-ecba78b66dac',
+      });
+    } else {
+      setCss({
+        style: 'navbar navbar-expand-lg fixed-top bg-transparent navbar-dark',
+        img: 'https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart-ligth.svg?alt=media&token=496e3d29-fad8-40d2-93ae-b45a267178f9',
+      });
     }
   };
-  window.addEventListener("scroll", changeNavbar);
+
+  window.addEventListener('scroll', changeNavbar);
+
   return (
     <nav
       className={
-        scroll
-          ? 'navbar navbar-expand-lg fixed-top bg-light navbar-light'
-          : 'navbar navbar-expand-lg fixed-top bg-transparent navbar-dark'
+        page == '/'
+          ? css.style
+          : 'navbar navbar-expand-lg fixed-top bg-light navbar-light'
       }
     >
       <div className="container-fluid">
@@ -66,7 +77,11 @@ export default function () {
             </span>
             <img
               className="img"
-              src={scroll ? "https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart.svg?alt=media&token=d60920bb-bd11-4b2c-baed-ecba78b66dac" : "https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart-ligth.svg?alt=media&token=496e3d29-fad8-40d2-93ae-b45a267178f9"}
+              src={
+                page == '/'
+                  ? css.img
+                  : 'https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart.svg?alt=media&token=d60920bb-bd11-4b2c-baed-ecba78b66dac'
+              }
             />
           </div>
         </Link>

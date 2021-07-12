@@ -1,5 +1,10 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  useLocation,
+} from 'react-router-dom';
 import NavBar from './components/NavBar';
 import './App.css';
 import Home from './Views/Home';
@@ -9,7 +14,6 @@ import Store from './Views/Store';
 import FilterProduct from './Views/FilterProduct';
 import ProductDetails from './Views/ProductDetails';
 import { CartProvider } from './context/CartContext';
-//import './seeds/index';
 
 function App() {
   return (

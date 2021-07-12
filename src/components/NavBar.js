@@ -1,9 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import NavItem from './NavItem';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 
 export default function () {
+  const location = useLocation();
+  console.log(location.pathname);
+  const page = location.pathname;
   const [cart, setCart] = useContext(CartContext);
   const [amount, setAmount] = useState(0);
   useEffect(() => {

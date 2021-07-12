@@ -9,6 +9,7 @@ export default function () {
   const page = location.pathname;
   const [cart, setCart] = useContext(CartContext);
   const [amount, setAmount] = useState(0);
+  const [scroll, setScroll] = useState(false);
   useEffect(() => {
     let n = 0;
     cart.forEach((c) => {
@@ -16,9 +17,22 @@ export default function () {
     });
     setAmount(n);
   }, [cart]);
-
+  const changeNavbar = e=>{
+    if(window.scrollY >= 80){
+      setScroll(true);
+    }else{
+      setScroll(false);
+    }
+  };
+  window.addEventListener("scroll", changeNavbar);
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top ">
+    <nav
+      className={
+        scroll
+          ? 'navbar navbar-expand-lg fixed-top bg-light navbar-light'
+          : 'navbar navbar-expand-lg fixed-top bg-transparent navbar-dark'
+      }
+    >
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           HG Store
@@ -52,7 +66,7 @@ export default function () {
             </span>
             <img
               className="img"
-              src="https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart-ligth.svg?alt=media&token=496e3d29-fad8-40d2-93ae-b45a267178f9"
+              src={scroll ? "https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart.svg?alt=media&token=d60920bb-bd11-4b2c-baed-ecba78b66dac" : "https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart-ligth.svg?alt=media&token=496e3d29-fad8-40d2-93ae-b45a267178f9"}
             />
           </div>
         </Link>

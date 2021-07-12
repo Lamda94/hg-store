@@ -10,7 +10,7 @@ export default function Category({ data }) {
         height="200px"
         width="auto"
       />
-      <div className="card-body bg-primary">
+      <div className="card-body bg-secondary">
         <h5 className="card-title">{data.name}</h5>
         <p className="card-text">{data.description}</p>
       </div>

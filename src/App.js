@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
@@ -5,6 +6,10 @@ import {
   Switch,
   useLocation,
 } from 'react-router-dom';
+=======
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+>>>>>>> Stashed changes
 import NavBar from './components/NavBar';
 import './App.css';
 import Home from './Views/Home';

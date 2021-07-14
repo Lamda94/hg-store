@@ -19,8 +19,8 @@ export default function () {
     });
     setAmount(n);
   }, [cart]);
+
   const changeNavbar = (e) => {
-    console.log(`${window.scrollY} >= 80 && ${page} == '/'`);
     if (window.scrollY >= 80) {
       setCss({
         style: 'navbar navbar-expand-lg fixed-top bg-light navbar-light',
@@ -41,7 +41,7 @@ export default function () {
       className={
         page == '/'
           ? css.style
-          : 'navbar navbar-expand-lg fixed-top bg-light navbar-light'
+          : 'navbar navbar-expand-lg fixed-top bg-light navbar-light border-bottom'
       }
     >
       <div className="container-fluid">

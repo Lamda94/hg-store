@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Product({ data }) {
   return (
     <div className="col d-flex justify-content-center">
-      <div className="card text-dark bg-light">
+      <div className="card text-dark bg-light pb-1">
         <img
           src={data.images}
           className="card-img-top card-header"

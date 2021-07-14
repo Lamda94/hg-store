@@ -7,10 +7,12 @@ export default function () {
   const location = useLocation();
   const page = location.pathname;
   const [cart, setCart] = useContext(CartContext);
-  const [css, setCss] = useState({
-    style: 'navbar navbar-expand-lg fixed-top bg-transparent navbar-dark',
-    img: 'https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart-ligth.svg?alt=media&token=496e3d29-fad8-40d2-93ae-b45a267178f9',
-  });
+  const [img, setImg] = useState(
+    'https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart-ligth.svg?alt=media&token=496e3d29-fad8-40d2-93ae-b45a267178f9'
+  );
+  const [css, setCss] = useState(
+    'navbar navbar-expand-lg fixed-top bg-transparent navbar-dark'
+  );
   const [amount, setAmount] = useState(0);
   useEffect(() => {
     let n = 0;
@@ -22,15 +24,15 @@ export default function () {
 
   const changeNavbar = (e) => {
     if (window.scrollY >= 80) {
-      setCss({
-        style: 'navbar navbar-expand-lg fixed-top bg-light navbar-light',
-        img: 'https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart.svg?alt=media&token=d60920bb-bd11-4b2c-baed-ecba78b66dac',
-      });
+      setImg(
+        'https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart.svg?alt=media&token=d60920bb-bd11-4b2c-baed-ecba78b66dac'
+      );
+      setCss('navbar navbar-expand-lg fixed-top bg-light navbar-light');
     } else {
-      setCss({
-        style: 'navbar navbar-expand-lg fixed-top bg-transparent navbar-dark',
-        img: 'https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart-ligth.svg?alt=media&token=496e3d29-fad8-40d2-93ae-b45a267178f9',
-      });
+      setImg(
+        'https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart-ligth.svg?alt=media&token=496e3d29-fad8-40d2-93ae-b45a267178f9'
+      );
+      setCss('navbar navbar-expand-lg fixed-top bg-transparent navbar-dark');
     }
   };
 
@@ -40,7 +42,7 @@ export default function () {
     <nav
       className={
         page == '/'
-          ? css.style
+          ? css
           : 'navbar navbar-expand-lg fixed-top bg-light navbar-light border-bottom'
       }
     >
@@ -79,7 +81,7 @@ export default function () {
               className="img"
               src={
                 page == '/'
-                  ? css.img
+                  ? img
                   : 'https://firebasestorage.googleapis.com/v0/b/hg-store-293e9.appspot.com/o/cart.svg?alt=media&token=d60920bb-bd11-4b2c-baed-ecba78b66dac'
               }
             />

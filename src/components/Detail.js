@@ -67,7 +67,7 @@ export default function Detail({ data }) {
         <h2 className=" mt-5 text-center mb-4">Product Details</h2>
         <div className="card mb-3 pt-2 ms-2" style={{ width: '100%' }}>
           <div className="row g-0">
-            <div className="col-md-4 pt-5">
+            <div className="col-md-4 pt-3 pb-2">
               <img
                 src={data.images}
                 alt="Imagen del producto."

@@ -8,10 +8,11 @@ export default function FilterProduct() {
   const { id } = useParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  //console.log(products, id);
   useEffect(async () => {
     try {
       let data = [];
+
       const querySnapshot = await db
         .collection('Products')
         .where('category', '==', id)

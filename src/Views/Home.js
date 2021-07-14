@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <div className="head">
-        <Banner msj={'Bienvenidos a la mascotienda HG store'} />
+        <Banner msj={'Bienvenidos a la mascotienda HG Store'} />
       </div>
       <div className="body container-fluid bg-ligth">
         <h2 className="text-center mt-4 fw-bold">Categorias</h2>

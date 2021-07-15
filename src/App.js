@@ -9,6 +9,7 @@ import Store from './Views/Store';
 import FilterProduct from './Views/FilterProduct';
 import ProductDetails from './Views/ProductDetails';
 import { CartProvider } from './context/CartContext';
+import Orders from './Views/Orders';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/cart" component={Cart} />
             <Route path="/category/:id" component={FilterProduct} />
             <Route path="/detail/:id" component={ProductDetails} />
+            <Route path="/orders" component={Orders} />
           </Switch>
         </Router>
       </div>

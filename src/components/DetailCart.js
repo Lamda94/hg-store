@@ -27,7 +27,7 @@ export default function Detail({ data }) {
                 <li>Cantidad: {data.amount}</li>
               </ul>
             </div>
-            <div class="card-footer">
+            <div className="card-footer">
               <button type="button" className="btn btn-danger">
                 Quitar
               </button>

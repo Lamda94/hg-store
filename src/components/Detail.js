@@ -60,7 +60,7 @@ export default function Detail({ data }) {
       style={{ height: '100vh' }}
     >
       <div className="row col-9 ">
-        <h2 className=" mt-5 text-center mb-4">Product Details</h2>
+        <h2 className=" mt-5 text-center mb-4">Detalles del Producto</h2>
         <div className="card mb-3 pt-2 " style={{ width: '100%' }}>
           <div className="row g-0">
             <div className="col-md-4 pt-3 pb-2">

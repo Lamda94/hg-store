@@ -6,7 +6,6 @@ export default function Detail({ data }) {
   const [number, setNumber] = useState(0);
   const [ava] = useState(data.availability);
   const [cart, setCart] = useContext(CartContext);
-  console.log(cart);
   const Add = () => {
     if (number < ava) {
       if (data.availability > 0) {

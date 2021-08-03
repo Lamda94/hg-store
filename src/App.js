@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import './App.css';
 import Home from './Views/Home';
-/* import About from './Views/About';*/
+import About from './Views/About';
 import Cart from './Views/Cart';
 import Store from './Views/Store';
 import FilterProduct from './Views/FilterProduct';
@@ -19,6 +19,7 @@ function App() {
           <NavBar />
           <Switch>
             <Route path="/" exact component={Home} />
+            <Route path="/About" exact component={About} />
             <Route path="/Store" component={Store} />
             <Route path="/cart" component={Cart} />
             <Route path="/category/:id" component={FilterProduct} />

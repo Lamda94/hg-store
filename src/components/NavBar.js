@@ -66,7 +66,6 @@ export default function () {
             <NavItem name={'Inicio'} src={'/'} active={true} />
             <NavItem name={'Productos'} src={'/Store'} activo={false} />
             <NavItem name={'Nosotros'} src={'/About'} activo={false} />
-            <NavItem name={'Contacto'} src={'/Contact'} activo={false} />
           </ul>
         </div>
         <Link to="/cart" className="a">

@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 
 export default function Detail({ data }) {
-  const remove = (i) => {};
+  const [cart, setCart] = useContext(CartContext);
+  const remove = () => {
+    const ca = cart.filter((product) => product.id !== data.id);
+    setCart(ca);
+  };
 
   return (
     <div className="row col-9 ps-5">
@@ -28,7 +32,7 @@ export default function Detail({ data }) {
               </ul>
             </div>
             <div className="card-footer">
-              <button type="button" className="btn btn-danger">
+              <button type="button" className="btn btn-danger" onClick={remove}>
                 Quitar
               </button>
             </div>

@@ -6,7 +6,6 @@ import Detail from '../components/Detail';
 export default function ProductDetails() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
-  console.log(product);
   useEffect(async () => {
     try {
       let data;
